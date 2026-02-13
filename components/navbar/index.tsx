@@ -8,6 +8,7 @@ import { FaPhoneAlt, FaSearch, FaShoppingBag } from "react-icons/fa";
 import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
 import { MobileMenu } from "./MobileMenu";
 import { NavItem } from "./NavItem";
+import { MdArrowOutward } from "react-icons/md";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -16,11 +17,9 @@ export default function Navbar() {
   return (
     <header className="w-full relative z-50">
       {/* Top Yellow Bar */}
-      <div className="bg-[#f3c200] text-center py-3 text-sm font-medium">
+      <div className="bg-[#f3c200] text-center py-3 text-sm">
         Implementing regenerative agriculture practices!
-        <span className="ml-2 font-semibold cursor-pointer">
-          Contact Us →
-        </span>
+          Contact Us <MdArrowOutward size={16} className="inline" />
       </div>
 
       {/* Main Navbar */}
@@ -49,7 +48,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center">
 
             <button className="bg-green-700 text-white px-6 py-3 rounded-md mr-6 hover:bg-green-800 transition">
-              Get In Touch →
+              Get In Touch <MdArrowOutward size={20} className="inline" />
             </button>
 
             <div className="flex gap-3 mr-6">
@@ -89,7 +88,7 @@ export default function Navbar() {
 }
 function IconBox({ children }: { children: React.ReactNode }) {
   return (
-    <div className="w-11 h-11 bg-white rounded-md flex items-center justify-center shadow-sm cursor-pointer hover:bg-gray-100 transition">
+    <div className="w-11 h-11 rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-100 transition">
       {children}
     </div>
   );

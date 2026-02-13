@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
 
         {/* Newsletter Section */}
-        <div className="mt-20 bg-[#0f4a37] rounded-2xl p-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="mt-10 bg-[#0f4a37] rounded-2xl p-5 flex flex-col lg:flex-row items-center justify-between gap-8">
           
           <div>
             <h3 className="text-2xl font-semibold mb-3">Stay Updated</h3>
@@ -71,8 +71,8 @@ export default function Footer() {
                 placeholder="Your Email Address"
                 className="bg-transparent px-6 py-4 outline-none text-white placeholder-gray-300 w-72"
               />
-              <button className="bg-yellow-400 text-black px-8 font-medium hover:bg-yellow-300 transition">
-                Subscribe →
+              <button className="bg-yellow-400 text-black px-4 font-medium hover:bg-yellow-300 transition">
+                Subscribe
               </button>
             </div>
             <p className="text-sm text-gray-300 mt-3">

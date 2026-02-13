@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
+import { Navigation,Autoplay, EffectFade } from "swiper/modules";
 import { FaArrowRight } from "react-icons/fa";
 
 import "swiper/css";
@@ -83,7 +83,7 @@ export default function Hero() {
               </div>
 
               {/* Bottom Fade */}
-              <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-white" />
+              <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent via-white/50 to-white" />
             </div>
           </SwiperSlide>
         ))}
