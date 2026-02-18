@@ -1,171 +1,164 @@
-import { useState } from 'react';
-import { motion, AnimatePresence, Variants } from 'framer-motion';
+"use client";
 
-const faqItems = [
+import { useState } from "react";
+import { Leaf, Minus, Plus } from "lucide-react";
+import { Check } from "lucide-react";
+
+const faqs = [
   {
-    id: 'accordion-a1',
-    question: 'How often should I visit the dentist?',
-    answer: "It's recommended to see your dentist every 6 months for a routine check-up and cleaning, unless advised otherwise."
+    question: "Do pig farms require more land compared to the past?",
+    answer:
+      "Modern pig farming uses optimized housing systems and advanced feed efficiency to reduce land usage while improving productivity.",
   },
   {
-    id: 'accordion-a2',
-    question: 'What should I do in a dental emergency?',
-    answer: 'Call our office immediately. We offer same-day emergency care for issues like severe pain, broken teeth, or swelling.'
+    question: "How do you ensure animal health and bio-security?",
+    answer:
+      "We follow strict vaccination programs, controlled farm access, and continuous veterinary supervision to maintain the highest herd health standards.",
   },
   {
-    id: 'accordion-a3',
-    question: 'Do you offer services for kids?',
-    answer: 'Absolutely! We provide gentle, friendly pediatric dental care for children of all ages.'
+    question: "Is pig farming environmentally sustainable?",
+    answer:
+      "With proper manure management, nutrient recycling, and sustainable feed programs, pig farming can operate responsibly and efficiently.",
   },
   {
-    id: 'accordion-a4',
-    question: 'What are my options for replacing missing teeth?',
-    answer: 'We offer dental implants, bridges, and dentures depending on your needs and preferences.'
+    question: "Do pig farms contribute to the local economy?",
+    answer:
+      "Yes. Pig farming supports rural employment, feed supply chains, transportation, and food production sectors.",
   },
-  {
-    id: 'accordion-a5',
-    question: 'Is teeth whitening safe?',
-    answer: 'Yes, when performed by a dental professional, teeth whitening is safe and effective with long-lasting results.'
-  }
 ];
 
-const FAQs = () => {
-  const [activeId, setActiveId] = useState<string | null>(null);
+const features = [
+  "Highest quality seeds & plants",
+  "Cutting edge biosecurity methods",
+  "Pest management planning",
+  "Improving energy efficiency",
+  "Filtering, and recycling rainwater",
+  "Solutions tailored to your needs",
+];
 
-  const toggleAccordion = (id: string) => {
-    setActiveId(activeId === id ? null : id);
-  };
-
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
-  };
-
-  const itemVariants: Variants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        ease: [0.4, 0, 0.2, 1]
-      }
-    }
-  };
-
-  const contentVariants: Variants = {
-    closed: {
-      height: 0,
-      opacity: 0,
-      transition: {
-        duration: 0.3,
-        ease: [0.4, 0, 0.2, 1]
-      }
-    },
-    open: {
-      height: 'auto',
-      opacity: 1,
-      transition: {
-        duration: 0.3,
-        ease: [0.4, 0, 0.2, 1]
-      }
-    }
-  };
+export default function FAQs() {
+  const [activeIndex, setActiveIndex] = useState(1);
 
   return (
-    <section className="py-16 md:py-20 bg-white">
-      <div className="container mx-auto px-4 md:px-12 lg:px-20">
-        <motion.div
-          className="flex flex-wrap -mx-4"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-        >
-          <motion.div
-            className="w-full lg:w-5/12 px-4 mb-8 lg:mb-0"
-            variants={itemVariants}
-          >
-            <span className="font-semibold text-primary-600 uppercase tracking-wider text-xs mb-3 inline-block">
-              Everything You Need to Know
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-neutral-800 mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-neutral-600 text-base leading-relaxed">
-              Find answers to common questions about our dental services, appointments, and care.
-            </p>
-          </motion.div>
+    <section className="relative bg-[#063c23] py-20 md:py-32 text-white overflow-hidden">
+      {/* Soft Gradient Accent */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#063c23] via-[#063c23]/95 to-[#063c23]" />
 
-          <motion.div
-            className="w-full lg:w-7/12 px-4"
-            variants={itemVariants}
-          >
-            <div className="space-y-3">
-              {faqItems.map((item) => (
-                <motion.div
-                  key={item.id}
-                  className="overflow-hidden bg-white border border-neutral-100 rounded-md hover:border-primary-200 transition-colors duration-300"
-                  initial={false}
-                  variants={itemVariants}
+      <div className="relative container mx-auto px-4 md:px-12 lg:px-20 grid lg:grid-cols-2 gap-10 md:gap-24 items-center">
+
+        {/* LEFT CONTENT */}
+        <div>
+          {/* Subtitle */}
+          <div className="flex items-center gap-3 text-yellow-400 mb-6">
+            <Leaf size={22} />
+            <p className="text-lg tracking-wide">
+              Delivering with purpose & partnership!
+            </p>
+          </div>
+
+          {/* Heading */}
+          <h2 className="text-3xl md:text-5xl leading-10 font-semibold mb-8">
+            Unlocking nature,
+            <br />
+            enriching life!
+          </h2>
+
+          {/* Description */}
+          <p className="text-gray-200 text-[17px] leading-[30px] mb-12 max-w-xl">
+            We are committed to responsible pig farming through innovation,
+            sustainable livestock practices and strict quality standards that
+            ensure both animal welfare and premium pork production.
+          </p>
+
+          {/* Script Signature */}
+          <p className="font-greatvibes text-4xl md:text-6xl text-yellow-400">
+            Enriching Lives
+          </p>
+        </div>
+
+        {/* RIGHT FAQ */}
+        <div className="space-y-6">
+          {faqs.map((item, index) => {
+            const isActive = activeIndex === index;
+
+            return (
+              <div
+                key={index}
+                className="border border-white/10 rounded-xl overflow-hidden transition-all duration-300"
+              >
+                <button
+                  onClick={() =>
+                    setActiveIndex(isActive ? -1 : index)
+                  }
+                  className="w-full flex items-center justify-between px-6 py-5 text-left group"
                 >
-                  <motion.div
-                    className="px-6 py-4 cursor-pointer flex justify-between items-center group"
-                    onClick={() => toggleAccordion(item.id)}
-                    initial={false}
+                  <span className="text-[16px] font-medium">
+                    {item.question}
+                  </span>
+
+                  <div
+                    className={`w-9 h-9 flex items-center justify-center rounded-md text-sm font-bold transition ${isActive
+                      ? "bg-yellow-400 text-black"
+                      : "bg-white text-black group-hover:bg-yellow-400"
+                      }`}
                   >
-                    <h3 className={`text-base font-semibold ${activeId === item.id ? 'text-primary-700' : 'text-neutral-800 group-hover:text-primary-600'} transition-colors`}>
-                      {item.question}
-                    </h3>
-                    <motion.span
-                      className={`flex-shrink-0 ml-4 ${activeId === item.id ? 'text-primary-600' : 'text-neutral-400 group-hover:text-primary-600'} transition-colors`}
-                      animate={{ rotate: activeId === item.id ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="m6 9 6 6 6-6" />
-                      </svg>
-                    </motion.span>
-                  </motion.div>
-                  <AnimatePresence initial={false}>
-                    {activeId === item.id && (
-                      <motion.div
-                        className="overflow-hidden"
-                        initial="closed"
-                        animate="open"
-                        exit="closed"
-                        variants={contentVariants}
-                      >
-                        <div className="px-6 pb-5 text-sm text-neutral-600 leading-relaxed">
-                          {item.answer}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </motion.div>
+                    {isActive ? <Minus size={20} className="text-primary-dark" /> : <Plus size={20} className="text-green-700" />}
+                  </div>
+                </button>
+
+                <div
+                  className={`grid transition-all duration-500 ${isActive
+                    ? "grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
+                    }`}
+                >
+                  <div className="overflow-hidden">
+                    <p className="px-6 pb-6 text-gray-300 text-[15px] leading-[28px]">
+                      {item.answer}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div className="relative container mx-auto px-4 md:px-12 lg:px-20 mt-20">
+        {/* Heading */}
+        <h3 className="text-lg md:text-2xl font-semibold md:text-center text-white mb-12">
+          Delivering impact with purpose and partnership!
+        </h3>
+
+        {/* Grid */}
+        <div className="grid md:grid-cols-3 gap-3">
+
+          {features.map((feature, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-4 p-6 rounded-md transition-all duration-300 cursor-pointer bg-[#e6ebe8] hover:bg-yellow-400 text-[#0b3d2e] hover:shadow-lg hover:scale-[1.02]"
+              >
+                <div
+                  className="w-8 h-8 flex items-center justify-center rounded-full bg-[#1f6b45] text-white"
+                >
+                  <Check size={16} />
+                </div>
+
+                <span className="text-[15px] font-medium">
+                  {feature}
+                </span>
+              </div>
+            ))}
+         </div>
+
+        {/* Bottom Text */}
+        <p className="mt-12 text-gray-100 text-[16px] leading-[26px] max-w-xl mx-auto">
+          We join farmers, manufacturers, and retailers in sourcing, making and
+          delivering products that are vital for living.{" "}
+          <span className="text-yellow-400 font-medium underline cursor-pointer">
+            Get Started Now!
+          </span>
+        </p>
       </div>
     </section>
   );
-};
-
-export default FAQs;
+}

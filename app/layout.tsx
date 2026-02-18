@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Parkinsans } from "next/font/google";
+import { Parkinsans, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
@@ -8,6 +8,12 @@ const parkinsans = Parkinsans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-parkinsans",
+});
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-greatvibes",
 });
 
 export const viewport: Viewport = {
@@ -127,7 +133,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${parkinsans.variable} font-sans antialiased bg-white text-gray-800`}
+        className={`${parkinsans.variable} ${greatVibes.variable} font-sans antialiased bg-white text-gray-800`}
       >
         <div className="min-h-screen flex flex-col">
           <Navbar />

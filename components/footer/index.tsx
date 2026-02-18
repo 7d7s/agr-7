@@ -3,16 +3,16 @@ import { FaFacebookF, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0b3d2e] text-white pt-20 relative overflow-hidden">
+    <footer className="bg-primary-dark text-white pt-20 relative overflow-hidden">
       
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 md:px-12 lg:px-20">
 
         {/* Top Section */}
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-12">
 
           {/* Logo & About */}
           <div className="lg:col-span-2">
-            <h2 className="text-3xl font-bold mb-6">Agritec</h2>
+            <h2 className="text-3xl font-bold mb-6">Agrowok</h2>
             <p className="text-gray-300 leading-relaxed mb-6 max-w-md">
               Our commitment is to help farmers have the technologies they
               need to protect the crops and empowering the future of food production!
@@ -44,7 +44,7 @@ export default function Footer() {
             </p>
 
             <p className="text-yellow-400 font-medium mb-2">
-              Agritec@7oroof.com
+              Agrowok@7oroof.com
             </p>
 
             <p className="text-gray-200">
@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
 
         {/* Newsletter Section */}
-        <div className="mt-10 bg-[#0f4a37] rounded-2xl p-5 flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="mt-10 bg-[#0f4a37] rounded-2xl p-5 md:p-8 flex flex-col lg:flex-row items-center justify-between gap-8">
           
           <div>
             <h3 className="text-2xl font-semibold mb-3">Stay Updated</h3>
@@ -71,7 +71,7 @@ export default function Footer() {
                 placeholder="Your Email Address"
                 className="bg-transparent px-6 py-4 outline-none text-white placeholder-gray-300 w-72"
               />
-              <button className="bg-yellow-400 text-black px-4 font-medium hover:bg-yellow-300 transition">
+              <button className="bg-yellow-400 text-white px-4 font-medium hover:bg-yellow-300 transition">
                 Subscribe
               </button>
             </div>
@@ -86,7 +86,7 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="mt-16 border-t border-white/10 pt-8 pb-12 text-center text-gray-300 text-sm">
-          ©2025 Agritec, All Rights Reserved. With Love by{" "}
+          ©2025 Agrowok, All Rights Reserved. With Love by{" "}
           <span className="text-yellow-400">7oroof.com</span>
           <div className="mt-3">
             Terms & Conditions  –  Privacy Policy  –  Sitemap

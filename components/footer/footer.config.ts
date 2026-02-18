@@ -12,7 +12,6 @@ export const FOOTER_LINKS = {
     "Irrigation Management",
     "Detailed Field Reports",
     "Crop Rotation Planning",
-    "Soil Texture Mapping",
   ],
   resources: [
     "News & Media",

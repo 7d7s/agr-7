@@ -3,10 +3,10 @@ import { FaArrowRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default function FeatureCards() {
   return (
-    <section className="relative -mt-24 z-20 container mx-auto px-6">
-      <div className="grid md:grid-cols-2 gap-6">
+    <section className="relative -mt-24 z-20 container mx-auto px-4 md:px-12 lg:px-20">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Green Card */}
-        <div className="bg-[#0d3b2e] text-white rounded-2xl p-10 relative overflow-hidden flex items-center justify-between">
+        <div className="bg-primary-dark text-white rounded-2xl p-10 lg:col-span-2 relative overflow-hidden flex items-center justify-between">
           <div className="max-w-md">
             <h3 className="text-2xl font-bold mb-4">
               Feeding The World With Consistency.

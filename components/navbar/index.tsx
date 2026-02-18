@@ -24,17 +24,17 @@ export default function Navbar() {
 
       {/* Main Navbar */}
       <div className="bg-[#f5f5f5] border-b">
-        <div className="container mx-auto flex items-center justify-between">
+        <div className="container mx-auto px-4 md:px-12 lg:px-20 flex items-center justify-between">
 
           {/* Logo */}
-          <div className="px-8 py-6 border-r">
+          <div className="py-6 pr-8 border-r">
             <Link href="/" className="text-3xl font-bold text-green-700">
-              Agritec
+              Agrowok
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-10 text-[15px] font-medium">
+          <nav className="hidden lg:flex items-center gap-2 text-[15px] font-medium">
             {NAV_ITEMS.map((item) => (
               <NavItem
                 key={item.label}
@@ -47,11 +47,11 @@ export default function Navbar() {
           {/* Right Section */}
           <div className="hidden lg:flex items-center">
 
-            <button className="bg-green-700 text-white px-6 py-3 rounded-md mr-6 hover:bg-green-800 transition">
+            <button className="bg-green-700 text-white p-4 rounded-md mr-4 hover:bg-green-800 transition">
               Get In Touch <MdArrowOutward size={20} className="inline" />
             </button>
 
-            <div className="flex gap-3 mr-6">
+            <div className="flex gap-3 mr-4">
               <IconBox><FaSearch /></IconBox>
               <IconBox><FaShoppingBag /></IconBox>
             </div>
