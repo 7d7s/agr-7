@@ -57,10 +57,15 @@ export default function Navbar() {
             </div>
 
             <div className="flex items-center gap-4 border-l pl-6 pr-8">
-              <div className="w-16 h-16 rounded-full border-4 border-green-200 flex items-center justify-center">
-                <div className="w-12 h-12 rounded-full bg-green-700 flex items-center justify-center text-white">
-                  <FaPhoneAlt size={14} />
+              <div className="relative">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-300 flex items-center justify-center shadow-lg shadow-green-200/50">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-600 to-green-700 flex items-center justify-center text-white shadow-md">
+                    <FaPhoneAlt size={14} className="animate-pulse" />
+                  </div>
                 </div>
+                {/* Enhanced Ping Animation */}
+                <div className="absolute inset-0 w-16 h-16 rounded-full border-2 border-green-400 animate-ping opacity-75" />
+                <div className="absolute inset-0 w-16 h-16 rounded-full border border-green-300 animate-ping animation-delay-200" />
               </div>
               <div>
                 <p className="text-sm text-gray-500">Sales team</p>
