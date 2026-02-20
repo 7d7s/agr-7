@@ -2,6 +2,8 @@
 
 import BlogCard from "@/components/common/BlogCard";
 import { Leaf } from "lucide-react";
+import { motion } from "framer-motion";
+import AnimatedSection from "@/components/common/AnimatedSection";
 
 const blogs = [
   {
@@ -32,27 +34,76 @@ const blogs = [
 
 export default function Blogs() {
   return (
-    <section className="bg-[#f3f4f2] py-16 md:24">
+    <AnimatedSection className="bg-[#f3f4f2] py-16 md:24" animation="fadeIn" delay={0.2}>
       <div className="container mx-auto px-4 md:px-12 lg:px-20 ">
         {/* Header */}
-        <div className="text-center mb-20">
-          <p className="text-[#1f6b45] md:text-lg mb-4">
-            <Leaf size={22} className="inline mr-5"/>Latest ideas & insights from the world!
-          </p>
+        <motion.div 
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <motion.p 
+            className="flex items-center justify-center text-[#1f6b45] md:text-lg mb-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <motion.span
+              className="inline mr-5"
+              initial={{ rotate: 0 }}
+              whileHover={{ rotate: 15 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Leaf size={22} />
+            </motion.span>
+            Latest ideas & insights from world!
+          </motion.p>
 
-          <h2 className="text-2xl md:text-5xl leading-9 font-semibold text-[#0b3d2e] mb-6">
+          <motion.h2 
+            className="text-2xl md:text-5xl leading-9 font-semibold text-[#0b3d2e] mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
             Farming and agriculture <br />
             news from farmers!
-          </h2>
-        </div>
+          </motion.h2>
+        </motion.div>
 
         {/* Blog Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+        >
           {blogs.map((blog, index) => (
-            <BlogCard key={index} {...blog} />
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.6, 
+                delay: 0.7 + index * 0.1,
+                type: "spring",
+                stiffness: 100
+              }}
+              viewport={{ once: true }}
+              style={{
+                transformStyle: 'preserve-3d',
+                perspective: '1000px'
+              }}
+            >
+              <BlogCard {...blog} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }
