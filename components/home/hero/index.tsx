@@ -161,7 +161,7 @@ export default function Hero() {
       {/* Custom Navigation Buttons - Outside Swiper */}
       <motion.button
         type="button"
-        className="custom-swiper-prev absolute left-4 md:left-16 top-1/2 -translate-y-1/2 text-white cursor-pointer z-20 flex items-center justify-center"
+        className="hidden md:block custom-swiper-prev absolute left-4 md:left-16 top-1/2 -translate-y-1/2 text-white cursor-pointer z-20 flex items-center justify-center"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 1 }}
@@ -172,7 +172,7 @@ export default function Hero() {
       </motion.button>
       <motion.button
         type="button"
-        className="custom-swiper-next absolute right-4 md:right-16 top-1/2 -translate-y-1/2 text-white cursor-pointer z-20 flex items-center justify-center"
+        className="hidden md:block custom-swiper-next absolute right-4 md:right-16 top-1/2 -translate-y-1/2 text-white cursor-pointer z-20 flex items-center justify-center"
         initial={{ opacity: 0, x: 20 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 1.1 }}

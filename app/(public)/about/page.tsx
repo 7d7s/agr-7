@@ -5,7 +5,7 @@ import { Leaf, ShieldCheck, HeartHandshake, Factory, ArrowRight } from "lucide-r
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/common/AnimatedSection";
 import Breadcrumb from "@/components/common/Breadcrumb";
-import ContactCTA from "@/components/common/ContactCTA";
+import ContactSection from "@/components/home/contact";
 
 export default function AboutPage() {
   return (
@@ -19,47 +19,89 @@ export default function AboutPage() {
       />
 
       {/* ================= INTRO ================= */}
-      <section className="relative py-28 md:py-36 bg-white overflow-hidden">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20 grid lg:grid-cols-2 gap-20 items-center relative z-10">
+      <AnimatedSection className="relative py-10 md:py-20 bg-white overflow-hidden" animation="fadeIn" delay={0.1}>
+        <div className="container mx-auto px-6 md:px-12 lg:px-20 grid lg:grid-cols-2 gap-10 md:gap-20 items-center relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
             viewport={{ once: true }}
           >
             {/* Small Label */}
-            <div className="flex items-center gap-3 mb-6 text-[#063c23]">
-              <Leaf size={18} />
+            <motion.div
+              className="flex items-center gap-3 mb-6 text-[#063c23]"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <motion.div
+                initial={{ rotate: 0 }}
+                whileHover={{ rotate: 15 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Leaf size={18} />
+              </motion.div>
               <span className="uppercase tracking-wider text-sm font-semibold">
                 10+ Years Experience
               </span>
-            </div>
+            </motion.div>
 
             {/* Heading */}
-            <h2 className="text-4xl md:text-5xl font-semibold text-[#063c23] leading-tight mb-8">
+            <motion.h2
+              className="text-4xl md:text-5xl font-semibold text-[#063c23] leading-tight mb-8"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
               A Decade of Trusted <br />
               Pig Farming Excellence
-            </h2>
+            </motion.h2>
 
-            <div className="space-y-6 mb-10">
-              <p className="text-gray-600 leading-relaxed text-lg">
+            <motion.div
+              className="space-y-6 mb-10"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              viewport={{ once: true }}
+            >
+              <motion.p
+                className="text-gray-600 leading-relaxed text-lg"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                viewport={{ once: true }}
+              >
                 For over 10 years, our farm has specialized in sustainable pig
                 breeding, advanced nutrition management, and ethical livestock
                 practices that ensure animal welfare and premium pork production.
-              </p>
+              </motion.p>
 
-              <p className="text-gray-600 leading-relaxed text-lg">
+              <motion.p
+                className="text-gray-600 leading-relaxed text-lg"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+                viewport={{ once: true }}
+              >
                 We combine modern technology, strict biosecurity systems,
                 and environmentally responsible operations to strengthen
                 supply chains and rural communities.
-              </p>
+              </motion.p>
               {/* Secondary Paragraph */}
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <motion.p
+                className="text-gray-600 text-lg leading-relaxed"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+                viewport={{ once: true }}
+              >
                 We integrate modern technology, strict biosecurity systems,
                 and environmentally responsible operations to strengthen
                 global supply chains and support rural communities.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
             {/* Signature Text */}
             <motion.p
               className="font-greatvibes text-4xl md:text-6xl text-yellow-400 mt-10"
@@ -76,11 +118,17 @@ export default function AboutPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
             {/* Main Image */}
-            <div className="rounded-3xl overflow-hidden mb-14">
+            <motion.div
+              className="rounded-3xl overflow-hidden mb-8 md:mb-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+            >
               <Image
                 src="/whyus.webp"
                 alt="Pig Farm"
@@ -88,34 +136,49 @@ export default function AboutPage() {
                 height={600}
                 className="object-cover w-full h-[400px]"
               />
-
-            </div>
+            </motion.div>
             {/* Feature Points */}
-            <div className="space-y-4 mb-10">
-              <div className="flex items-start gap-3">
-                <ShieldCheck className="text-[#063c23]" size={20} />
-                <p className="text-gray-700">
-                  Advanced herd health monitoring systems
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <ShieldCheck className="text-[#063c23]" size={20} />
-                <p className="text-gray-700">
-                  Sustainable feed and waste management programs
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <ShieldCheck className="text-[#063c23]" size={20} />
-                <p className="text-gray-700">
-                  Strict biosecurity & global compliance standards
-                </p>
-              </div>
-            </div>
+            <motion.div
+              className="space-y-4 mb-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              {[
+                "Advanced herd health monitoring systems",
+                "Sustainable feed and waste management programs",
+                "Strict biosecurity & global compliance standards"
+              ].map((point, index) => (
+                <motion.div
+                  key={index}
+                  className="flex items-start gap-3"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.2, rotate: 15 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <ShieldCheck className="text-[#063c23]" size={20} />
+                  </motion.div>
+                  <p className="text-gray-700">
+                    {point}
+                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
 
             {/* CTA */}
             <motion.button
-              whileHover={{ y: -4 }}
-              whileTap={{ scale: 0.98 }}
+              whileHover={{ y: -4, scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
+              viewport={{ once: true }}
               className="bg-[#063c23] hover:bg-[#0b5c38] text-white px-8 py-4 rounded-xl flex items-center gap-3 font-semibold transition shadow-md"
             >
               Learn More About Our Process
@@ -123,7 +186,7 @@ export default function AboutPage() {
             </motion.button>
           </motion.div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* ================= MISSION & VISION ================= */}
       <AnimatedSection className="relative bg-[#063c23] py-20 md:py-32 text-white overflow-hidden" animation="fadeIn" delay={0.3}>
@@ -430,8 +493,7 @@ export default function AboutPage() {
           </div>
         </div>
       </AnimatedSection>
-
-      <ContactCTA />
+      <ContactSection />
     </main>
   );
 }
