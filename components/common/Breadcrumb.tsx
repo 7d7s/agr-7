@@ -7,7 +7,7 @@ import AnimatedSection from "./AnimatedSection";
 
 export default function Breadcrumb({ image, title, description }: { image: string; title: string; description: string }) {
     return (
-        <AnimatedSection className="relative h-[70vh] md:h-[60vh] w-full overflow-hidden" animation="fadeIn" delay={0.1}>
+        <AnimatedSection className="relative h-[70vh] md:h-[60vh] lg:h-[65vh] w-full overflow-hidden" animation="fadeIn" delay={0.1}>
             {/* Background Image with Parallax Effect */}
             <motion.div
                 initial={{ scale: 1.2 }}
@@ -91,7 +91,7 @@ export default function Breadcrumb({ image, title, description }: { image: strin
 
                     {/* Call to Action Button */}
                     <motion.button
-                        className="group relative bg-gradient-to-r from-yellow-400 to-yellow-500 text-[#063c23] px-8 py-4 rounded-lg overflow-hidden transition-all flex items-center gap-3 font-semibold"
+                        className="group relative bg-yellow-400 text-[#063c23] px-8 py-4 rounded-lg overflow-hidden transition-all flex items-center gap-3 font-semibold"
                         whileTap={{ scale: 0.98 }}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -99,7 +99,7 @@ export default function Breadcrumb({ image, title, description }: { image: strin
                         viewport={{ once: true }}
                     >
                         {/* Animated Background */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-white to-yellow-100 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 bg-yellow-100 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                         
                         <span className="relative flex items-center gap-3">
                             <motion.div

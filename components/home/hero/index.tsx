@@ -40,7 +40,7 @@ const slides = [
 
 export default function Hero() {
   return (
-    <AnimatedSection className="relative h-[80vh] md:h-[82vh] w-full overflow-hidden" animation="fadeIn" delay={0.1}>
+    <AnimatedSection className="relative h-[80vh] md:h-[82vh] lg:h-[90vh] w-full overflow-hidden" animation="fadeIn" delay={0.1}>
       <Swiper
         modules={[Navigation, Autoplay, EffectFade]}
         effect="fade"
@@ -54,7 +54,7 @@ export default function Hero() {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={slide.id}>
-            <div className="relative h-[70vh] md:h-[82vh] w-full">
+            <div className="relative h-[70vh] md:h-[82vh] lg:h-[90vh] w-full">
               {/* Background Image */}
               <motion.div
                 initial={{ scale: 1.2 }}
