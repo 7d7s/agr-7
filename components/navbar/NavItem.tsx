@@ -31,13 +31,19 @@ export function NavItem({
       {item.href ? (
         <Link
           href={item.href}
-          className={`px-4 py-6 transition-all duration-200 flex items-center ${
+          className={`px-4 py-6 transition-all duration-200 flex items-center relative ${
             isActive 
               ? "text-green-700" 
               : "text-gray-700 hover:text-green-700"
           }`}
         >
-          {item.label}
+          {isActive && (
+            <>
+              <div className="absolute top-0 left-0 right-0 h-1 bg-primary-dark" />
+              <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/30 via-primary-dark/10 to-transparent" />
+            </>
+          )}
+          <span className="relative z-10">{item.label}</span>
           {item.children && (
             <svg 
               className="ml-1 w-4 h-4 transition-transform duration-200 group-hover:rotate-180" 
@@ -51,13 +57,19 @@ export function NavItem({
         </Link>
       ) : (
         <button
-          className={`px-4 py-6 transition-all duration-200 flex items-center ${
+          className={`px-4 py-6 transition-all duration-200 flex items-center relative ${
             isActive 
               ? "text-green-700" 
               : "text-gray-700 hover:text-green-700"
           }`}
         >
-          {item.label}
+          {isActive && (
+            <>
+              <div className="absolute top-0 left-0 right-0 h-[6px] bg-primary-dark" />
+              <div className="absolute inset-0 bg-gradient-to-b from-primary-dark via-primary-dark/50 to-transparent" />
+            </>
+          )}
+          <span className="relative z-10">{item.label}</span>
           {item.children && (
             <svg 
               className="ml-1 w-4 h-4 transition-transform duration-200 group-hover:rotate-180" 

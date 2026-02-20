@@ -13,11 +13,4 @@ export const FOOTER_LINKS = {
     "Detailed Field Reports",
     "Crop Rotation Planning",
   ],
-  resources: [
-    "News & Media",
-    "How It Works",
-    "Pricing Plans",
-    "Help & FAQs",
-    "Awards",
-  ],
 };

@@ -32,7 +32,7 @@ const NotFoundPage = () => {
     <div className="min-h-[70vh] flex items-center justify-center bg-neutral-50 relative overflow-hidden py-24 md:py-32">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#94c120_1px,transparent_1px)] [background-size:20px_20px]" />
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#063c23_1px,transparent_1px)] [background-size:20px_20px]" />
       </div>
 
       <motion.div
@@ -47,7 +47,7 @@ const NotFoundPage = () => {
               404
             </h1>
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-primary-50 text-primary-600 px-6 py-2 rounded-full text-sm font-semibold tracking-wide uppercase border border-primary-100 shadow-sm">
+              <div className="bg-primary-dark text-white px-6 py-2 rounded-full text-sm font-semibold tracking-wide uppercase border border-primary-100 shadow-sm">
                 Page Not Found
               </div>
             </div>
@@ -73,7 +73,7 @@ const NotFoundPage = () => {
           >
             <Link
               href="/"
-              className="group flex items-center gap-2 px-5 py-3 md:px-8 md:py-3.5 bg-primary-500 hover:bg-primary-600 text-white rounded-md font-medium transition-all duration-300 shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 hover:-translate-y-0.5 text-sm md:text-base"
+              className="group flex items-center gap-2 px-5 py-3 md:px-8 md:py-3.5 bg-primary-dark hover:bg-primary-dark/90 text-white rounded-md font-medium transition-all duration-300 shadow-lg text-sm md:text-base relative overflow-hidden"
             >
               <Home className="w-4 h-4" />
               <span>Back to Home</span>
@@ -82,7 +82,7 @@ const NotFoundPage = () => {
 
             <Link
               href="/contact"
-              className="group flex items-center gap-2 px-5 py-3 md:px-8 md:py-3.5 bg-white border border-neutral-200 hover:border-primary-200 text-neutral-700 hover:text-primary-600 rounded-md font-medium transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 text-sm md:text-base"
+              className="group flex items-center gap-2 px-5 py-3 md:px-8 md:py-3.5 bg-white border border-neutral-200 hover:border-primary-dark/30 text-neutral-700 hover:text-primary-600 rounded-md font-medium text-sm md:text-base"
             >
               <Phone className="w-4 h-4" />
               <span>Contact Support</span>

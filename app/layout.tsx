@@ -3,17 +3,20 @@ import { Parkinsans, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import PageTransition from "@/components/common/PageTransition";
 
 const parkinsans = Parkinsans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-parkinsans",
+  fallback: ["system-ui", "arial", "sans-serif"],
 });
 
 const greatVibes = Great_Vibes({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-greatvibes",
+  fallback: ["cursive", "serif"],
 });
 
 export const viewport: Viewport = {
@@ -137,7 +140,9 @@ export default function RootLayout({
       >
         <div className="min-h-screen flex flex-col">
           <Navbar />
-          <main className="flex-grow">{children}</main>
+          <main className="flex-grow">
+            <PageTransition>{children}</PageTransition>
+          </main>
           <Footer />
         </div>
       </body>

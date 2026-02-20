@@ -27,14 +27,14 @@ export default function Navbar() {
         <div className="container mx-auto px-4 md:px-12 lg:px-20 flex items-center justify-between">
 
           {/* Logo */}
-          <div className="py-6 pr-8 border-r">
+          <div className="py-4 pr-8 border-r">
             <Link href="/" className="text-3xl font-bold text-green-700">
               Agrowok
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-2 text-[15px] font-medium">
+          <nav className="hidden lg:flex items-center gap-2 text-sm font-medium">
             {NAV_ITEMS.map((item) => (
               <NavItem
                 key={item.label}
