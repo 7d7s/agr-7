@@ -1,12 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { Mail, Clock, ChevronDown } from "lucide-react";
 import { MdArrowOutward } from "react-icons/md";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/common/AnimatedSection";
 
-export default function ContactSection() {
+export default function Contact() {
   return (
     <AnimatedSection className="py-16 md:py-28 bg-white" animation="fadeIn" delay={0.2}>
       <div className="container mx-auto px-4 md:px-12 lg:px-20">
