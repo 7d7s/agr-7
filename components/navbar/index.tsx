@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { AnimatePresence } from "framer-motion";
 import { NAV_ITEMS } from "./nav.config";
 import { FaPhoneAlt, FaSearch, FaShoppingBag } from "react-icons/fa";
 import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
@@ -87,7 +88,14 @@ export default function Navbar() {
         </div>
       </div>
 
-      {mobileOpen && <MobileMenu pathname={pathname} />}
+      <AnimatePresence>
+        {mobileOpen && (
+          <MobileMenu 
+            pathname={pathname} 
+            onClose={() => setMobileOpen(false)} 
+          />
+        )}
+      </AnimatePresence>
     </header>
   );
 }
