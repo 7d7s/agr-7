@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import PageTransition from "@/components/common/PageTransition";
+import BodyManager from "@/components/common/BodyManager";
 
 const parkinsans = Parkinsans({
   subsets: ["latin"],
@@ -137,8 +138,10 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={`${parkinsans.variable} ${greatVibes.variable} font-sans antialiased bg-white text-gray-800`}
+        suppressHydrationWarning
       >
         <div className="min-h-screen flex flex-col">
+          <BodyManager />
           <Navbar />
           <main className="flex-grow">
             <PageTransition>{children}</PageTransition>
