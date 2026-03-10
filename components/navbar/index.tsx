@@ -19,8 +19,10 @@ export default function Navbar() {
     <header className="w-full relative z-50">
       {/* Top Yellow Bar */}
       <div className="bg-[#f3c200] text-center py-3 text-sm">
-        Implementing regenerative agriculture practices!
+        <p className="max-w-md md:max-w-lg mx-auto">
+          Implementing regenerative agriculture practices!
           Contact Us <MdArrowOutward size={16} className="inline" />
+        </p>
       </div>
 
       {/* Main Navbar */}
@@ -90,9 +92,9 @@ export default function Navbar() {
 
       <AnimatePresence>
         {mobileOpen && (
-          <MobileMenu 
-            pathname={pathname} 
-            onClose={() => setMobileOpen(false)} 
+          <MobileMenu
+            pathname={pathname}
+            onClose={() => setMobileOpen(false)}
           />
         )}
       </AnimatePresence>

@@ -10,17 +10,17 @@ import Services from "@/components/home/services";
 
 const Home = () => {
     return (
-        <div>
+        <div className="overflow-x-hidden">
             <Hero />
-            <FeatureCards/>
-            <AboutUs/>
+            <FeatureCards />
+            <AboutUs />
             <WhyUs />
-            <Services/>
-            <Contact/>
-            <FAQs/>
-            <Blogs/>
+            <Services />
+            <Contact />
+            <FAQs />
+            <Blogs />
         </div>
     );
-};  
+};
 
 export default Home;
