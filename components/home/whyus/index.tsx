@@ -154,7 +154,7 @@ export default function WhyUs() {
 
         {/* RIGHT IMAGE CARD */}
         <motion.div 
-          className="relative sticky top-14"
+          className="relative sticky top-14 overflow-hidden"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -191,7 +191,7 @@ export default function WhyUs() {
             viewport={{ once: true }}
           >
             <motion.div 
-              className="bg-white rounded-xl shadow-md px-8 py-6 text-center"
+              className="bg-white rounded-xl shadow-md px-6 py-6 text-center"
               whileHover={{ scale: 1.05, y: -5 }}
               transition={{ duration: 0.3 }}
             >
@@ -202,7 +202,7 @@ export default function WhyUs() {
             </motion.div>
 
             <motion.div 
-              className="bg-white rounded-xl shadow-lg px-8 py-6 text-center -ml-4"
+              className="bg-white rounded-xl shadow-lg px-6 py-6 text-center -ml-4"
               whileHover={{ scale: 1.05, y: -5 }}
               transition={{ duration: 0.3 }}
             >
